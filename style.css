@@ -4,7 +4,546 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  /* font-family: 'Cinzel', serif; */
   font-family: "Poppins", sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background: #0a2558;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.sidebar.active {
+  width: 60px;
+}
+
+.sidebar.active ~ .homeSection {
+  width: calc(100% - 60px);
+  left: 60px;
+}
+
+.sidebar.active ~ .homeSection nav {
+  position: fixed;
+  width: calc(100% - 60px);
+  left: 60px;
+}
+
+.sidebar .logoDetails {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar .logoDetails i {
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+  min-width: 60px;
+  text-align: center;
+}
+
+.sidebar .logoDetails .logoName {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Cinzel', serif;
+}
+
+.sidebar .navLinks {
+  margin-top: 10px;
+}
+
+.sidebar .navLinks li {
+  position: relative;
+  height: 50px;
+  list-style: none;
+}
+
+.sidebar .navLinks li a {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.sidebar .navLinks li a:hover {
+  background: #081d45;
+}
+
+.sidebar .navLinks li a i {
+  min-width: 60px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+.sidebar .navLinks li a .linkName {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.homeSection {
+  background: #f5f5f5;
+  position: relative;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.homeSection nav {
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  height: 80px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.homeSection nav .sidebarButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.homeSection nav .sidebarButton i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+.homeSection nav .sidebarButton span.sidebarBtn {
+  cursor: pointer;
+}
+
+.homeSection nav .searchBox {
+  height: 50px;
+  width: 550px;
+  margin: 0 20px;
+  position: relative;
+}
+
+.homeSection nav .searchBox input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  padding: 0 15px;
+  font-size: 17px;
+  background: #f5f6fa;
+  border: 2px solid #efeef1;
+  outline: none;
+}
+
+.homeSection nav .searchBox i {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 40px;
+  width: 40px;
+  background: #2697ff;
+  border-radius: 6px;
+  color: white;
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.homeSection nav .profileDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  min-width: 190px;
+  background: #f5f6fa;
+  border: 2px solid #efeef1;
+  border-radius: 6px;
+  padding: 0 15px 0 2px;
+}
+
+.homeSection nav .profileDetails img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+}
+
+.homeSection nav .profileDetails span.adminName {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin: 0px 10px;
+}
+
+.homeSection nav .profileDetails i {
+  color: #333;
+  font-size: 25px;
+}
+
+.homeSection .homeContent {
+  position: relative;
+  padding-top: 100px;
+}
+
+.homeSection .homeContent .overviewBoxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+
+.homeSection .homeContent .overviewBoxes .box {
+  width: calc(100% / 4 - 15px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+  padding: 15px 14px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.homeSection .homeContent .overviewBoxes .box .boxTopic {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.homeSection .homeContent .overviewBoxes .box .number {
+  font-size: 35px;
+  font-weight: 500;
+  margin-top: -5px;
+  display: inline-block;
+}
+
+.homeSection .homeContent .overviewBoxes .box .indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homeSection .homeContent .overviewBoxes .box .indicator i {
+  height: 20px;
+  width: 20px;
+  background: #8fdacb;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.homeSection .homeContent .overviewBoxes .box .indicator i.down {
+  background: #e87d88;
+}
+
+.homeSection .homeContent .overviewBoxes .box .indicator span.text {
+  font-size: 12px;
+}
+
+.homeSection .homeContent .overviewBoxes .box .cart {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 500;
+  height: 50px;
+  width: 50px;
+  background: #cce5ff;
+  color: #66b0ff;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 12px;
+  margin: -15px 0 0 6px;
+}
+
+.homeSection .homeContent .overviewBoxes .box .cart.two {
+  background: #c0f3db;
+  color: #2bd47d;
+}
+
+.homeSection .homeContent .overviewBoxes .box .cart.three {
+  background: #ffe8b3;
+  color: #ffc233;
+}
+
+.homeSection .homeContent .overviewBoxes .box .cart.four {
+  background: #f7d4d7;
+  color: #e05260;
+}
+
+.homeSection .homeContent .salesBoxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+.homeSection .homeContent .salesBoxes .box .title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.homeSection .homeContent .salesBoxes .box .salesDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homeSection .homeContent .salesBoxes .box .salesDetails ul.details li {
+  list-style: none;
+  margin: 8px 0;
+}
+
+.homeSection .homeContent .salesBoxes .box .salesDetails ul.details li a {
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.homeSection .homeContent .salesBoxes .box .salesDetails ul.details li a.delivered {
+  background: #2bd47d;
+  color: white;
+  padding: 0 7px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.homeSection .homeContent .salesBoxes .box .salesDetails ul.details li a.pending {
+  background: #66b0ff;
+  color: white;
+  padding: 0 7px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.homeSection .homeContent .salesBoxes .box .salesDetails ul.details li a.returned {
+  background: #e05260;
+  color: white;
+  padding: 0 7px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.homeSection .homeContent .salesBoxes .box .salesDetails ul.details li.topic {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.homeSection .homeContent .salesBoxes .box.recentSales {
+  width: 65%;
+  border-radius: 12px;
+  padding: 20px;
+  background: white;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.homeSection .homeContent .salesBoxes .box .button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.homeSection .homeContent .salesBoxes .box .button a {
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  background: #0a2558;
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.homeSection .homeContent .salesBoxes .box .button a:hover {
+  background: #0d3073;
+}
+
+.homeSection .homeContent .salesBoxes .box.topSales {
+  width: 35%;
+  margin-left: 20px;
+  background: white;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.homeSection .homeContent .salesBoxes .box.topSales ul.topSalesDetails li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 8px 0;
+}
+
+.homeSection .homeContent .salesBoxes .box.topSales ul.topSalesDetails li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.homeSection .homeContent .salesBoxes .box.topSales ul.topSalesDetails li a img {
+  margin-right: 8px;
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* responsive codes */
+@media (max-width: 1240px) {
+  .sidebar {
+    width: 60px;
+  }
+  .sidebar.active {
+    width: 220px;
+  }
+  .sidebar.active ~ .homeSection {
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+  .sidebar.active ~ .homeSection nav {
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+  .homeSection {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .homeSection nav {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+}
+
+@media (max-width: 1078px) {
+  .homeSection .salesBoxes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .homeSection .homeContent .salesBoxes .box.recentSales,
+  .homeSection .homeContent .salesBoxes .box.topSales {
+    margin-bottom: 20px;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .homeSection .homeContent .salesBoxes .box.topSales {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .homeSection .homeContent .overviewBoxes .box {
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 658px) {
+  .homeContent .overviewBoxes .box {
+    width: 100%;
+  }
+  .homeSection nav .sidebarButton .dashboard,
+  .homeSection nav .profileDetails .adminName,
+  .homeSection nav .profileDetails i {
+    display: none;
+  }
+  .homeSection nav .profileDetails {
+    min-width: 50px;
+    height: 50px;
+  }
+  .homeSection .salesBoxes .salesDetails {
+    width: 590px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
